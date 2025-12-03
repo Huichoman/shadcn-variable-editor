@@ -1,253 +1,189 @@
-# React Modern Stack Template
+# Smart Variable Editor
 
-🚀 **Production-ready React template** with cutting-edge technologies and best practices built-in. Perfect for building modern web applications with enterprise-grade architecture and developer experience.
-
-**⚡ Lightning-fast development** • **🎨 Beautiful UI components** • **🌍 Internationalization ready** • **🔧 Zero configuration** • **📱 Mobile-first responsive**
-
-## 🚀 Tech Stack
-
-### Core Technologies
-
-- ⚛️ **React 18** - Latest React with concurrent features
-- 🔷 **TypeScript** - Type safety and better DX
-- ⚡ **Vite** - Lightning-fast build tool and dev server
-- 🎨 **Tailwind CSS** - Utility-first CSS framework
-
-### UI & Design
-
-- 🧩 **shadcn/ui** - Beautiful, accessible component library
-- 🌙 **next-themes** - Dark/Light theme with system detection
-- 📱 **Responsive Design** - Mobile-first approach
-- 🎯 **Radix UI** - Unstyled, accessible UI primitives
-
-### Developer Experience
-
-- 🔧 **ESLint + Prettier** - Code quality and formatting
-- 🏗️ **GitHub Actions** - CI/CD pipeline included
-- 📝 **Path Aliases** - Clean imports with `@/` prefix
-- 🎪 **Hot Module Replacement** - Instant feedback
-
-### Features & Functionality
-
-- 🐻 **intlayer** - Modern, type-safe internationalization
-- 📝 **React Hook Form + Zod** - Type-safe form handling
-- 🛣️ **React Router v6** - Modern client-side routing
-
-### Production Ready
-
-- 🚀 **Optimized builds** - Tree-shaking and code splitting
-- 📊 **Bundle analysis** - Performance monitoring ready
-- 🔒 **Security** - Updated dependencies, no vulnerabilities
-- 📱 **PWA ready** - Easy to extend with service workers
+A modern rich text editor with dynamic variable support, built with **React**, **TypeScript**, **TailwindCSS**, and **shadcn/ui**. This project demonstrates advanced editor capabilities using Tiptap, featuring atomic variable nodes, intelligent autocomplete, and interactive variable management.
 
 ## ✨ Features
 
-- 🌍 **Internationalization** - English and Spanish support
-- 🌙 **Dark/Light Theme** - Theme toggle with persistent storage
-- 📱 **Responsive Design** - Mobile-first approach
-- 🎨 **Modern UI Components** - shadcn/ui component library
-- 🔗 **Client-side Routing** - React Router with nested routes
-- 📝 **Type Safety** - Full TypeScript support
-- 🎯 **ESLint + Prettier** - Code quality and formatting
-- 🚀 **Fast Development** - Vite HMR
-- 📦 **Path Aliases** - Clean imports with `@/` prefix
+### Core Functionality
 
-## � Quick Start
+- **Dynamic Variables:** Insert variables that render as styled badges within the text
+- **Smart Autocomplete:** Type `{` to trigger an intelligent variable suggestion menu
+- **Interactive Variables:** Click any variable to open a contextual popover with actions
+- **Toolbar Integration:** Manual variable insertion via categorized dropdown menu
+- **Real-time JSON Preview:** Live view of the editor's document structure
+
+### Variable Management
+
+- **Atomic Nodes:** Variables are treated as single, unbreakable units
+- **Copy to Clipboard:** Quick copy of variable syntax
+- **Delete Action:** Remove variables with a single click
+- **Categories:** Variables organized by User, Date, Company, and Order
+- **Descriptions:** Each variable includes helpful tooltips and descriptions
+
+### User Experience
+
+- **Internationalization:** Full i18n support (English/Spanish) using Intlayer
+- **Dark Mode Support:** Seamless theme switching via next-themes
+- **Responsive Design:** Mobile-friendly interface
+- **Accessibility:** Built with Radix UI primitives for full a11y compliance
+- **Type Safety:** 100% TypeScript implementation with strict mode
+
+## 🛠️ Technology Stack
+
+- **Framework:** React 18.3.1 + Vite 6.1.0
+- **Editor:** Tiptap 3.12.0 (ProseMirror-based)
+- **Language:** TypeScript 5.7.2
+- **Styling:** TailwindCSS 3.4.17
+- **UI Components:** shadcn/ui (Radix UI + Tailwind)
+- **Icons:** Lucide React
+- **i18n:** Intlayer
+- **State Management:** Zustand
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 20.11.0+ (see `.nvmrc`)
-- npm, yarn, or pnpm
+- Node.js 18+
+- npm or yarn
 
 ### Installation
 
-1. **Use this template** by clicking "Use this template" on GitHub, or clone it:
+```bash
+# Clone the repository
+git clone https://github.com/Huichoman/shadcn-variable-editor.git
 
-   ```bash
-   git clone <repository-url>
-   cd react-modern-stack-template
-   ```
+# Navigate to project directory
+cd shadcn-variable-editor
 
-2. **Install dependencies:**
+# Install dependencies
+npm install
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+# Start development server
+npm run dev
+```
 
-3. **Set up environment variables:**
+The application will be available at `http://localhost:5173`
 
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your values
-   ```
+## 📖 Usage
 
-4. **Start development server:**
+### Inserting Variables
 
-   ```bash
-   npm run dev
-   ```
+**Method 1: Autocomplete**
 
-5. **Open your browser** and navigate to `http://localhost:5173`
+1. Type `{` in the editor
+2. Select a variable from the suggestion menu
+3. Press Enter or click to insert
 
-## �🛠️ Installation
+**Method 2: Toolbar**
 
-1. Clone or copy this project
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+1. Click the "Insert Variable" button
+2. Browse variables by category
+3. Click to insert at cursor position
 
-## 📝 Available Scripts
+### Managing Variables
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Run ESLint with auto-fix
+Click any variable badge to:
 
-## 🌍 Internationalization
+- **Copy:** Copy the variable syntax to clipboard
+- **Delete:** Remove the variable from the document
 
-The project supports English and Spanish out of the box:
+### Available Variables
 
-- **Type-safe translations**: All translations are strongly typed with auto-completion.
-- **Modern tooling**: Uses `intlayer` for a better developer experience.
-- **Content files**: Translations defined in `src/content/*.content.ts` files.
-- **Language switcher**: Included in the navbar with locale persistence.
-- **Automatic dictionary generation**: Intlayer automatically builds dictionaries during development.
-- Add new languages by editing `intlayer.config.ts` and creating new content files.
+- **User:** `user.name`, `user.email`, `user.firstName`, `user.lastName`
+- **Date:** `date.today`, `date.now`
+- **Company:** `company.name`, `company.address`
+- **Order:** `order.number`, `order.total`
 
-## 🎨 Theme System
-
-- Light/Dark theme toggle
-- Persistent theme storage
-- CSS variables for easy customization
-- shadcn/ui theme integration
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 src/
-├── components/          # React components
-│   ├── ui/             # shadcn/ui components
-│   └── Navbar.tsx      # Navigation component
-├── content/            # Intlayer content declarations
-│   ├── navbar.content.ts   # Navbar translations
-│   ├── home.content.ts     # Home page translations
-│   └── about.content.ts    # About page translations
-├── hooks/              # Custom React hooks
-│   └── useI18n.ts      # Internationalization hook
-├── pages/              # Page components
-│   ├── Home.tsx        # Home page
-│   └── About.tsx       # About page
-├── types/              # TypeScript types
-├── App.tsx             # Main app component
-└── main.tsx            # App entry point
+├── components/
+│   ├── editor/
+│   │   ├── VariableEditor.tsx       # Main editor component
+│   │   ├── EditorToolbar.tsx        # Toolbar with insert button
+│   │   ├── VariableNodeView.tsx     # Interactive variable component
+│   │   └── VariableSuggestionList.tsx # Autocomplete menu
+│   └── ui/                          # shadcn/ui components
+├── extensions/
+│   ├── VariableNode.ts              # Tiptap custom node definition
+│   └── VariableSuggestion.ts        # Mention extension config
+├── data/
+│   └── variables.ts                 # Available variables data
+├── content/
+│   ├── variable-editor.content.ts   # i18n translations
+│   └── home.content.ts              # Page translations
+└── pages/
+    └── Home.tsx                     # Demo page
 ```
 
-## 🔧 Configuration Files
+## 🎨 Customization
 
-- `intlayer.config.ts` - Intlayer internationalization configuration
-- `vite.config.ts` - Vite configuration with intlayer plugin
-- `tailwind.config.js` - Tailwind CSS configuration
-- `tsconfig.json` - TypeScript configuration
-- `eslint.config.js` - ESLint configuration
-- `components.json` - shadcn/ui configuration
+### Adding New Variables
 
-## 🚀 Using as Template
+Edit `src/data/variables.ts`:
 
-To use this project as a template for new projects:
+```typescript
+export const AVAILABLE_VARIABLES: Variable[] = [
+  {
+    id: 'custom.variable',
+    label: 'custom.variable',
+    descriptionKey: 'customDescription',
+    categoryKey: 'categoryCustom',
+  },
+];
+```
 
-1. **Use GitHub Template**: Click "Use this template" button on GitHub
-2. **Clone your new repository**
-3. **Update project information:**
-   - Change `name` field in `package.json`
-   - Update `title` in `index.html`
-   - Delete this `README.md`
-   - Rename `TEMPLATE_README.md` to `README.md` and fill it out for your project
-   - Update repository URL in `package.json`
-4. **Customize content:**
-   - Update translations in `src/content/*.content.ts` files
-   - Customize theme in `tailwind.config.js`
-   - Add your routes in `src/App.tsx`
-   - Create your pages in `src/pages/`
-   - Update favicon and assets in `public/`
-5. **Environment setup:**
-   - Copy `.env.example` to `.env.local`
-   - Configure your environment variables
-6. **First commit:**
-   ```bash
-   git add .
-   git commit -m "Initial commit from template"
-   git push
-   ```
+Add translations in `src/content/variable-editor.content.ts`:
 
-## 🧪 Testing & Quality
+```typescript
+customDescription: t({
+  en: 'Description in English',
+  es: 'Descripción en Español',
+}),
+```
+
+### Styling Variables
+
+Modify badge styles in `src/extensions/VariableNode.ts`:
+
+```typescript
+class: 'inline-flex items-center rounded-md bg-primary/10 px-2 py-1 ...'
+```
+
+## 🧪 Development
 
 ```bash
-# Lint code
-npm run lint
+# Run development server
+npm run dev
 
-# Fix linting issues
-npm run lint:fix
+# Type checking
+npm run type-check
 
-# Type check
-npx tsc --noEmit
+# Build for production
+npm run build
 
-# Check dependencies for vulnerabilities
-npm audit
-
-# Check for outdated dependencies
-npm outdated
+# Preview production build
+npm run preview
 ```
 
-## 📋 Dependencies Overview
+## 📝 License
 
-### Production Dependencies
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- React ecosystem (react, react-dom, react-router-dom)
-- UI components (all @radix-ui components, lucide-react)
-- Styling (tailwindcss, clsx, tailwind-merge)
-- Internationalization (intlayer)
-- Forms (react-hook-form, zod)
-- State management (zustand)
-- Theme (next-themes)
+## 🤝 Contributing
 
-### Development Dependencies
+Contributions are welcome! Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
 
-- TypeScript and types
-- Vite and plugins
-- ESLint and TypeScript ESLint
-- Build tools
+## 👤 Author
 
-## 🎯 Best Practices Implemented
+**Jose S.**
 
-- **TypeScript strict mode** for type safety
-- **Path aliases** for clean imports
-- **Component composition** over inheritance
-- **Custom hooks** for reusable logic
-- **Separation of concerns** (pages, components, hooks, types)
-- **Internationalization first** approach
-- **Responsive design** with Tailwind CSS
-- **Accessible components** with Radix UI
-- **Modern React patterns** (functional components, hooks)
+- GitHub: [@Huichoman](https://github.com/Huichoman)
 
-## 🐛 Known Issues
+## 🙏 Acknowledgments
 
-- Minor ESLint warnings in shadcn/ui components (non-critical)
-- CSS @tailwind warnings in editor (processed by PostCSS, not an issue)
-
-## 🔄 Future Enhancements
-
-- Add more languages
-- Implement PWA features
-- Add testing setup (Jest/Vitest)
-- Add Storybook for component documentation
-- Add CI/CD configuration
-
-## 📄 License
-
-This project is intended as a template and can be freely used and modified for your projects.
+- [Tiptap](https://tiptap.dev/) - Headless editor framework
+- [shadcn/ui](https://ui.shadcn.com/) - Beautiful component library
+- [Radix UI](https://www.radix-ui.com/) - Accessible primitives
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS

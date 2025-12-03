@@ -3,13 +3,13 @@ import { t, type Dictionary } from 'intlayer';
 const homeContent = {
   key: 'home',
   content: {
-    welcome: t({
-      en: 'Welcome',
-      es: 'Bienvenido',
+    title: t({
+      en: 'Smart Text Editor with Dynamic Variables',
+      es: 'Editor de Texto Inteligente con Variables Dinámicas',
     }),
     description: t({
-      en: 'This is the home page for our application.',
-      es: 'Esta es la página de inicio de nuestra aplicación.',
+      en: 'A powerful rich text editor built with Tiptap, TypeScript, and shadcn/ui. Insert dynamic variables using the toolbar or type { to trigger autocomplete. Click on any variable to copy or delete it. Perfect for creating templates for emails, documents, and more.',
+      es: 'Un editor de texto enriquecido construido con Tiptap, TypeScript y shadcn/ui. Inserta variables dinámicas usando la barra de herramientas o escribe { para activar el autocompletado. Haz clic en cualquier variable para copiarla o eliminarla. Perfecto para crear plantillas de correos, documentos y más.',
     }),
     count: t({
       en: 'Count',

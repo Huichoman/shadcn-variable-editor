@@ -29,6 +29,8 @@ export default tseslint.config(
         'warn',
         { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }
       ],
+      // Allow explicit any in specific extension files
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
   // Overrides for declaration files: allow `any` in ambient typings
